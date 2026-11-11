@@ -1,16 +1,22 @@
 # Bug reports for exercise1.py
 
 Line: 3
-Problem: The condition `n % 2 == 1` checks if a number is odd, not even. For even numbers, the remainder when divided by 2 should be 0, not 1. This causes the function to return `True` for odd numbers and `False` for even numbers, which is the opposite of the intended behavior.
-Example: is_even(4) should return True (since 4 is even), but it returns False because 4 % 2 == 0, not 1.
+Problem: The condition checks if n % 2 == 1, which is incorrect for even numbers. Even numbers have a remainder of 0 when divided by 2, so the function should check for n % 2 == 0 to return true for even numbers.
+
+Example: is_even(4) should return True, but currently returns False because 4 % 2 == 0, not 1.
+
 Fix: return n % 2 == 0
 
 Line: 8
-Problem: The function `rectangle_area` incorrectly returns the sum of width and height instead of the product (area). The area of a rectangle is calculated as width × height, not width + height.
-Example: rectangle_area(5, 3) should return 15, but it returns 8.
+Problem: The function calculates the area of a rectangle as the sum of width and height, which is incorrect. The correct formula for area is width multiplied by height.
+
+Example: rectangle_area(5, 3) should return 15, but currently returns 8.
+
 Fix: return width * height
 
 Line: 13
-Problem: The function `double(n)` adds 2 to the input instead of multiplying it by 2. The term "twice" means multiplication by 2, not addition.
-Example: double(5) should return 10, but it returns 7.
+Problem: The function doubles a number by adding 2, which is incorrect. To double a number, it should be multiplied by 2.
+
+Example: double(5) should return 10, but currently returns 7.
+
 Fix: return n * 2
